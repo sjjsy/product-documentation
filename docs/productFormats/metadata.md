@@ -38,6 +38,7 @@ This page captures all the metadata items that are present in ICEYE SLC and GRD 
 | processing:software.processor         | Processor identifier or version.                                                                                                                                          | string               |           | "ICEYE_I_1.1.1"                                                                                                          | Yes     | Yes     | Yes         | Yes         |
 | iceye:acquisition_prf                 | Pulse Repetition Frequency (PRF) of the collection.                                                                                                                       | number               | Hz        | 6832.87                                                                                                                  | Yes     | Yes     | Yes         | Yes         |
 | iceye:acquisition_range_sampling_rate | Sampling rate used for digital sampling., defines range sample spacing.                                                                                                   | integer              | Samples/s | 786365100                                                                                                                | Yes     | Yes     | Yes         | Yes         |
+| iceye:amplitude_mapping               | Mapping applied to amplitude bands; function with optional parameters (e.g., function(scale*amplitude)).                                                                  | object               |           | {"function":"power","parameters":{"exponent":0.25,"scale":1}}                                                             | Yes     | Yes     | Yes          | Yes          |
 | iceye:average_scene_height            | Average height of the scene from terrain model.                                                                                                                           | integer              | meters    | 81                                                                                                                       | Yes     | Yes     | Yes         | Yes         |
 | iceye:calibration_factor              | Scaling coefficients to be applied to calibrate amplitude product to absolute brigthness intensity.                                                                       | number               |           | 2.3701258619904503e-05                                                                                                   | Yes     | Yes     | Yes         | Yes         |
 | iceye:coordinate_frame                | Coordinate frame used for the orbit positions and velocities.                                                                                                             | string               |           | "ecef"                                                                                                                   | Yes     | Yes     | Yes         | Yes         |
@@ -108,3 +109,25 @@ This page captures all the metadata items that are present in ICEYE SLC and GRD 
 | IMAGE_STRUCTURE.INTERLEAVE            | Interleave mode.                                                                                                                                                          | string               |           | "PIXEL"                                                                                                                  | No      | No      | Yes         | Yes         |
 | IMAGE_STRUCTURE.LAYOUT                | GeoTIFF internal layout (e.g., COG).                                                                                                                                      | string               |           | "COG"                                                                                                                    | No      | No      | Yes         | Yes         |
 | PRODUCT_NAME                          | Product Name                                                                                                                                                              | string               |           | "ICEYE_GBSG1X_20250627T112405Z_5045505_X42_SLF_SLC"                                                                      | No      | No      | Yes         | Yes         |
+
+## Amplitude mapping
+
+The metadata field `iceye:amplitude_mapping` describes any transform applied to the amplitude bands. It is included to indicate whether and how mapping is applied; for SLC COG amplitude bands in the fine and precise imaging modes, a mapping is applied by default to preserve the full dynamic range. The object contains a required `function` and an optional `parameters` object.
+
+When the `function` is `minmax`, no non‑linear transform has been applied: values are already in the native linear scale and can be used as‑is; no inversion is required. When the `function` is `clip`, very bright amplitudes above a threshold have been saturated to preserve precision at lower amplitudes; no inversion is needed, and clipped peaks are not recoverable. When the `function` is `power`, the `parameters` may include an `exponent` \(p\) and a positive `scale` (defaults to 1 if omitted) that define the mapping and its inverse as shown below.
+
+The aim of amplitude mapping is to preserve the full dynamic range of the original amplitude while storing values in `u16`, which enables efficient compression and smaller file sizes.
+
+Let the stored amplitude value be \( y \) and the true amplitude be \( A \). The mapping is defined by a function with optional parameters; in the common “power” case with exponent \( p \) and scale factor \(\text{scale}\), the forward transform is:
+
+\[
+y \;=\; \bigl(\text{scale}\cdot A\bigr)^{p}
+\]
+
+To recover the full dynamic range, invert the mapping:
+
+\[
+A \;=\; \frac{y^{\,1/p}}{\text{scale}}
+\]
+
+In the default configuration (`function = "power"`, `exponent = 0.25`, `scale = 1`), the forward transform is \( y = A^{0.25} \). To obtain the original amplitude, raise the stored values to the fourth power: \( A = y^{4} \).
