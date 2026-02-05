@@ -98,8 +98,8 @@ ICEYE aims to ensure that the the resulting imagery for tasks collected with the
 |                                                                                                                           Ground Range Sample Spacing \[m] |                          0.5                          |                          0.25                         |                          0.25                         |                          0.25                         |
 |                                                                                                                         Ground Azimuth Sample Spacing \[m] |                          0.5                          |                          0.25                         |                          0.25                         |                          0.25                         |
 | Product Format(see section [5](https://docs.google.com/document/d/1sE-SQh0Ri3YRHj_7eF3AmLs_FcuXRykS6D2E6Uzi0rk/edit#heading=h.m4oeulyjg5e4) for more info) | Cloud Optimized GeoTIFF + JSON(legacy: GeoTIFF + XML) | Cloud Optimized GeoTIFF + JSON(legacy: GeoTIFF + XML) | Cloud Optimized GeoTIFF + JSON(legacy: GeoTIFF + XML) | Cloud Optimized GeoTIFF + JSON(legacy: GeoTIFF + XML) |
-|                                                                                                                                     GRD Product Size \[MB] |                      250 to 1500                      |                      2000 to 3500                     |                      2000 to 3500                     |                      2000 to 3500                     |
-|                                                                                                                            Dynamic Range \[bits per pixel] |                  16 (uint) 32 (float)                 |                  16 (uint) 32 (float)                 |                  16 (uint) 32 (float)                 |                  16 (uint) 32 (float)                 |
+|                                                                                                                                     GRD Product Size \[MB] |                      100 to 400                      |                      400 to 1100                     |                      400 to 1100                     |                      400 to 1100                     |
+|                                                                                                                            Dynamic Range \[bits per pixel] |                  16 (uint)                  |                  16 (uint)                 |                  16 (uint)                 |                  16 (uint)                 |
 |                                                                                                                                 Radiometrically Calibrated |                          Yes                          |                          Yes                          |                          Yes                          |                          Yes                          |
 
 <small>Note: ICEYE Spotlight collection strategy employs constant bandwidth. At higher incidence angles, the geometry of SAR signal projection results in improved ground range resolution that greatly surpasses the nominal value for the imaging mode in question. The trade-off for this increased image detail is a reduced number of azimuth looks, which may slightly affect speckle characteristics.</small>
@@ -111,13 +111,13 @@ ICEYE aims to ensure that the the resulting imagery for tasks collected with the
 | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :------------------------------------------------: | :------------------------------------------------: | :------------------: | :------------------------: |
 |                                                                                                                                                         Focusing Plane |                     Slant Plane                    |                     Slant Plane                    |      Slant Plane     |         Slant Plane        |
 |                                                                                                                                           Slant Range Resolution \[m]  |                         0.5                        |                        0.25                        |         0.25         |            0.25            |
-|                                                                                                                                          Slant Azimuth Resolution \[m] |                        0.25                        |                         0.1                        |          0.5         |            0.25            |
+|                                                                                                                                          Azimuth Resolution \[m] |                        0.25                        |                         0.1                        |          0.5         |            0.25            |
 |                                                                                                                   Impulse Response Weighing Function (peak side level) |                 Uniform (-13.3 dB)                 |                  Uniform (-13.3dB)                 |  Uniform (-13.3 dB)  |     Uniform (-13.3 dB)     |
 |                                                                                                                                        Slant Range Sample Spacing \[m] |                        < 0.4                       |                        < 0.2                       |        < 0.25        |           < 0.25           |
-|                                                                                                                                      Slant Azimuth Sample Spacing \[m] |                        < 0.2                       |                       < 0.09                       |         <0.5         |           < 0.25           |
+|                                                                                                                                      Azimuth Sample Spacing \[m] |                        < 0.2                       |                       < 0.09                       |         <0.5         |           < 0.25           |
 | Slant Range Product Format(see section [5](https://docs.google.com/document/d/1sE-SQh0Ri3YRHj_7eF3AmLs_FcuXRykS6D2E6Uzi0rk/edit#heading=h.m4oeulyjg5e4) for more info) | Cloud Optimized GeoTIFF + JSON(legacy: HDF5 + XML) | Cloud Optimized GeoTIFF + JSON(legacy: HDF5 + XML) |   Cloud Optimized GeoTIFF + JSON(legacy: HDF5 + XML) |  Cloud Optimized GeoTIFF + JSON(legacy: HDF5 + XML) |
-|                                                                                                                                             Complex Product Size \[GB] |                      0.6 to 4                      |                       5 to 15                      |        1 to 3        |          1.3 to 5          |
-|                                                                                                                                         Dynamic Range (bits per pixel) |                16 (uint) 32 (float)                |                16 (uint) 32 (float)                | 16 (uint) 32 (float) |    16 (uint) 32 (float)    |
+|                                                                                                                                             Complex Product Size \[GB] |                      0.6 to 2.2                      |                       4 to 15                      |        0.7 to 3        |          1.3 to 5          |
+|                                                                                                                                         Dynamic Range (bits per pixel) |                16 (uint)                |                16 (uint)                | 16 (uint) |    16 (uint)    |
 
 
 ## 2.3 Spot Extended Area
@@ -172,8 +172,8 @@ ICEYE aims to ensure that the resulting imagery for tasks collected with the SLE
 |                                  Ground Range Sample Spacing \[m] |                          0.5                          |
 |                                Ground Azimuth Sample Spacing \[m] |                          0.5                          |
 | Product Format(see section [5](dataproducts.md#5-data-products) for more info) | Cloud Optimized GeoTIFF + JSON(legacy: GeoTIFF + XML) |
-|                                            GRD Product Size \[MB] |                       1000-6500                       |
-|                                   Dynamic Range \[bits per pixel] |                  16 (uint) 32 (float)                 |
+|                                            GRD Product Size \[MB] |                       1000-3000                       |
+|                                   Dynamic Range \[bits per pixel] |                  16 (uint)                 |
 |                                        Radiometrically Calibrated |                          Yes                          |
 
 
@@ -183,13 +183,13 @@ ICEYE aims to ensure that the resulting imagery for tasks collected with the SLE
 | ----------------------------------------------------------------------------: | :------------------------------------------------: |
 |                                                                Focusing Plane |                     Slant Plane                    |
 |                                                  Slant Range Resolution \[m]  |                         0.5                        |
-|                                                 Slant Azimuth Resolution \[m] |                         0.5                        |
+|                                                 Azimuth Resolution \[m] |                         0.5                        |
 |                          Impulse Response Weighing Function (peak side level) |                  Uniform (-13.3dB)                 |
 |                                               Slant Range Sample Spacing \[m] |                        < 0.4                       |
-|                                             Slant Azimuth Sample Spacing \[m] |                        <0.5                        |
-| Slant Range Product Format(see section [5](dataproducts.md#5-data-products) for more info) | Cloud Optimized GeoTIFF + JSON(legacy: HDF5 + XML) |
-|                                                    Complex Product Size \[GB] |                       6 to 15                      |
-|                                                Dynamic Range (bits per pixel) |                16 (uint) 32 (float)                |
+|                                             Azimuth Sample Spacing \[m] |                        <0.5                        |
+| Slant Range Product Format(see section [5](dataproducts.md#5-data-products) for more info) | Cloud Optimized GeoTIFF + JSON (legacy: HDF5 + XML) |
+|                                                    Complex Product Size \[GB] |                       4 to 7                      |
+|                                                Dynamic Range (bits per pixel) |                16 (uint)                |
 
 
 
@@ -250,8 +250,8 @@ ICEYE aims to ensure that the resulting imagery for tasks collected with the Dwe
 |                                                                                                                           Ground Range Sample Spacing \[m] |                          0.5                          |                          0.25                         |                         0.125                         |
 |                                                                                                                         Ground Azimuth Sample Spacing \[m] |                          0.5                          |                          0.25                         |                         0.125                         |
 | Product Format(see section [5](dataproducts.md#5-data-products) for more info) | Cloud Optimized GeoTIFF + JSON(legacy: GeoTIFF + XML) | Cloud Optimized GeoTIFF + JSON(legacy: GeoTIFF + XML) | Cloud Optimized GeoTIFF + JSON(legacy: GeoTIFF + XML) |
-|                                                                                                                                     GRD Product Size \[MB] |                      500 to 1500                      |                      1000 to 3500                     |                     6000 to 12000                     |
-|                                                                                                                            Dynamic Range \[bits per pixel] |                  16 (uint) 32 (float)                 |                  16 (uint) 32 (float)                 |                  16 (uint) 32 (float)                 |
+|                                                                                                                                     GRD Product Size \[MB] |                      120 to 300                      |                      400 to 1400                     |                     2000 to 4000                     |
+|                                                                                                                            Dynamic Range \[bits per pixel] |                  16 (uint)                  |                  16 (uint)                 |                  16 (uint)                |
 |                                                                                                                                 Radiometrically Calibrated |                          Yes                          |                          Yes                          |                          Yes                          |
 
 <small>Note: ICEYE Spotlight collection strategy employs constant bandwidth. At higher incidence angles, the geometry of SAR signal projection results in improved ground range resolution that greatly surpasses the nominal value for the imaging mode in question. The trade-off for this increased image detail is a reduced number of azimuth looks, which may slightly affect speckle characteristics.</small>
@@ -262,13 +262,13 @@ ICEYE aims to ensure that the resulting imagery for tasks collected with the Dwe
 | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :------------------------------------------------: | :------------------------------------------------: | :------------------------------------------------: |
 |                                                                                                                                                         Focusing Plane |                     Slant Plane                    |                     Slant Plane                    |                     Slant Plane                    |
 |                                                                                                                                           Slant Range Resolution \[m]  |                         0.5                        |                        0.25                        |                        0.125                       |
-|                                                                                                                                          Slant Azimuth Resolution \[m] |                        0.08                        |                        0.08                        |                        0.08                        |
+|                                                                                                                                          Azimuth Resolution \[m] |                        0.08                        |                        0.08                        |                        0.08                        |
 |                                                                                                                   Impulse Response Weighing Function (peak side level) |                  Uniform (-13.3dB)                 |                  Uniform (-13.3dB)                 |                  Uniform (-13.3dB)                 |
 |                                                                                                                                        Slant Range Sample Spacing \[m] |                        < 0.4                       |                        < 0.2                       |                        < 0.1                       |
-|                                                                                                                                      Slant Azimuth Sample Spacing \[m] |                       < 0.08                       |                       < 0.08                       |                       < 0.08                       |
+|                                                                                                                                      Azimuth Sample Spacing \[m] |                       < 0.08                       |                       < 0.08                       |                       < 0.08                       |
 | Slant Range Product Format(see section [5](dataproducts.md#5-data-products) for more info) | Cloud Optimized GeoTIFF + JSON(legacy: HDF5 + XML) | Cloud Optimized GeoTIFF + JSON(legacy: HDF5 + XML) | Cloud Optimized GeoTIFF + JSON(legacy: HDF5 + XML) |
-|                                                                                                                                             Complex Product Size \[GB] |                       8 to 15                      |                      10 to 24                      |                      15 to 30                      |
-|                                                                                                                                         Dynamic Range (bits per pixel) |                16 (uint) 32 (float)                |                16 (uint) 32 (float)                |                16 (uint) 32 (float)                |
+|                                                                                                                                             Complex Product Size \[GB] |                       1.5 to 15                      |                      4 to 24                      |                      9 to 30                      |
+|                                                                                                                                         Dynamic Range (bits per pixel) |                16 (uint)                |                16 (uint)               |                16 (uint)                |
 
 
 
@@ -330,7 +330,7 @@ ICEYE aims to ensure that the resulting imagery for tasks collected with the Str
 |                                 Ground Azimuth Sample Spacing \[m] |                          2.5                          |
 | Product Format(see section [5](dataproducts.md#5-data-products) for more info) | Cloud Optimized GeoTIFF + JSON(legacy: GeoTIFF + XML) |
 |                                             GRD Product Size \[MB] |                        600-1400                       |
-|                                    Dynamic Range \[bits per pixel] |                  16 (uint) 32 (float)                 |
+|                                    Dynamic Range \[bits per pixel] |                  16 (uint)                 |
 |                                         Radiometrically Calibrated |                          Yes                          |
 
 
@@ -340,13 +340,13 @@ ICEYE aims to ensure that the resulting imagery for tasks collected with the Str
 | -----------------------------------------------------------------------------: | :------------------------------------------------: |
 |                                                                 Focusing Plane |                     Slant Plane                    |
 |                                                   Slant Range Resolution \[m]  |                     0.5 to 2.5                     |
-|                                                  Slant Azimuth Resolution \[m] |                          3                         |
+|                                                  Azimuth Resolution \[m] |                          3                         |
 |                           Impulse Response Weighing Function (peak side level) |                  Uniform (-13.3dB)                 |
 |                                                Slant Range Sample Spacing \[m] |                     0.4 to 2.4                     |
-|                                              Slant Azimuth Sample Spacing \[m] |                         1.6                        |
+|                                              Azimuth Sample Spacing \[m] |                         1.6                        |
 | Slant Range Product Format(see section [5](dataproducts.md#5-data-products) for more info) | Cloud Optimized GeoTIFF + JSON(legacy: HDF5 + XML) |
 |                                                     Complex Product Size \[GB] |                      2.9 to 6                      |
-|                                                 Dynamic Range (bits per pixel) |                16 (uint) 32 (float)                |
+|                                                 Dynamic Range (bits per pixel) |                16 (uint)                |
 
 
 ## 2.6 Scan and Scan Wide
@@ -408,6 +408,6 @@ ICEYE aims to ensure that the resulting imagery for tasks collected with the Sca
 |                                 Ground Azimuth Sample Spacing \[m] |                           6               | 12 |
 | Product Format(see section [5](dataproducts.md#5-data-products) for more info) | Cloud Optimized GeoTIFF + JSON(legacy: GeoTIFF + XML) | Cloud Optimized GeoTIFF + JSON(legacy: GeoTIFF + XML) |
 |                                             GRD Product Size \[MB] |                       700 - 1300             | 800 - 1600 |
-|                                    Dynamic Range \[bits per pixel] |                  16 (uint) 32 (float)          | 16 (uint) 32 (float) |
+|                                    Dynamic Range \[bits per pixel] |                  16 (uint)         | 16 (uint) |
 |                                         Radiometrically Calibrated |                           No                  | No |
 

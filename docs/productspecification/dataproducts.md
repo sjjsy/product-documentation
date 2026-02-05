@@ -153,8 +153,6 @@ Images in the legacy SLC format are stored as binary matrices in an [HDF5](https
 
 ### 5.4.1 Colorized Sub-Aperture Image (CSI)
 
-ICEYE will release a new Cloud Optimized GeoTIFF CSI format that is described in this section, within the first quarter of 2026. A legacy CSI format described in [Section 5.4.2](#542-legacy-colorized-sub-aperture-image-csi) will continue to be offered for compatibility reasons until December 31, 2026.
-
 **Colorized Sub-aperture Images (CSI)** are made by assigning distinct colors to backscatter signals received from various sub-apertures, which are then integrated into a composite color image. Human-made objects with flat surfaces or sharp angles typically produce preferential scattering orientations (anisotropic scatterers) that appear highlighted as a dominant color in the CSI image.  In contrast, natural objects that scatter uniformly in all directions (isotropic scatterers) do not show preferential scattering geometries and tend to appear as gray tones in the CSI image. Additionally, objects partially obscured by vegetation or tree canopies may also be highlighted in dominant colors, as only a subset of sub-apertures captures strong backscatter returns. This feature enhances the CSI image’s effectiveness in identifying objects that might otherwise be concealed. This distinctive capability is particularly valuable in search, monitoring and surveillance operations.  Figure [5-1](#) shows an example of a CSI image, demonstrating how the CSI image can preferentially reveal human-made objects relative to a background of natural foliage.
 
 
@@ -183,7 +181,7 @@ A legacy CSI format can be provided for backward compatibility until *31 Decembe
 | Full ground resolution (same as GRD)                | Yes                                              | Yes                                                    |
 | Metadata format                                     | GeoJSON                                          | XML                                                    |
 | File naming convention                              | Regular ([5.6.1](#561-file-naming-convention-1)) | Legacy ([5.6.2](#562-legacy-file-naming-convention-2)) |
-| Availability                      | 1Q 2026 | Now; to be deprecated in 2026 with final availability on December 31, 2026. |
+| Availability                      | Now | Now; to be deprecated in 2026 with final availability on December 31, 2026. |
 
 
 
@@ -208,7 +206,7 @@ A legacy SAR Video (VID) format can be provided for backward compatibility until
 | Container                                           | Cloud Optimized GeoTIFF, MPEG4, GIF              | GeoTIFF,MPEG4, GIF                                     |
 | Metadata format                                     | GeoJSON                                          | XML                                                    |
 | File naming convention                              | Regular ([5.6.1](#561-file-naming-convention-1)) | Legacy ([5.6.2](#562-legacy-file-naming-convention-2)) |
-| Availability                      | 1Q 2026 | Now; to be deprecated in 2026 with final availability on December 31, 2026. |
+| Availability                      | Now | Now; to be deprecated in 2026 with final availability on December 31, 2026. |
 
 
 ## 5.5 On Demand Only Data Products
