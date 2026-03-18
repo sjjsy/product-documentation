@@ -108,13 +108,13 @@ In SLAR, the azimuth resolution—the ability to distinguish targets along the f
 
 Again, azimuth resolution in SLAR is based on the angular width of the pulse in the azimuth direction (represented by ꞵ in Figure 1[<span class="underline">.</span>](#_jupbwsyrzbec)3). Antennas that are long in the azimuth direction create narrow beams, which focus the signal and enable the detection of individual objects. However, even a narrow beam spreads out as it propagates from the antenna to the distant ground surface (See Figure [<span class="underline">1.4</span>](#figure-1.4-slar-pulse-dimensions)). In a RAR system, azimuth resolution is much better in the <span class="underline">near range</span> than the <span class="underline">far range</span>, illustrated by the following equation:
 
-\[delta_{\text{az}} = \frac{R\lambda}{L} = \frac{H\lambda}{L\sin\gamma}\]
+\[\delta_{\text{az}} = \frac{R\lambda}{L} = \frac{H\lambda}{L\sin\gamma}\]
 
 Here, \(R\) is the slant range, \(\lambda\) is the wavelength used by the radar, and \(L\) is the physical length of the antenna in the azimuth direction. In the second representation slant range is replaced with \(H\), the altitude of the airplane or the height of the imaging platform, and we introduce \(\gamma\), the slant or *depression angle* (the angle between the dotted vertical line and the beam in Figure [<span class="underline">1.3</span>](#real-aperture-and-side-looking-airborne-radar)), to make the equation reflect the SLAR use case.
 
 Ground range resolution in SLAR is independent from azimuth resolution, and is based on pulse length (see Figure [<span class="underline">1.4</span>](#figure-1.4-slar-pulse-dimensions)). The equation is as follows:
 
-\[delta_{\text{gr}} = \frac{\tau c}{2\cos\gamma}\]
+\[\delta_{\text{gr}} = \frac{\tau c}{2\cos\gamma}\]
 
 Here, \(\tau\) is the radar pulse duration and \(c\) is the speed of light.
 
@@ -125,9 +125,9 @@ Here, \(\tau\) is the radar pulse duration and \(c\) is the speed of light.
 
 To illustrate the differences in resolution in azimuth and range, let us examine an airborne system. This example uses an airplane flying at an altitude of 3 km with a RAR system with a 1 microsecond pulse duration, operating in [<span class="underline">L-band</span>](03_radar_frequency_bands.md) with a wavelength of 20 cm, with a 3 meter antenna at a 45° slant or depression angle. We achieve approximately the following azimuth and ground range resolutions:
 
-\[delta_{\text{az}} = \frac{H\lambda}{L\sin\gamma} = \frac{3000m \cdot 0.20m}{3m \cdot \sin 45{^\circ}} \approx 283m\]
+\[\delta_{\text{az}} = \frac{H\lambda}{L\sin\gamma} = \frac{3000m \cdot 0.20m}{3m \cdot \sin 45{^\circ}} \approx 283m\]
 
-\[delta_{\text{gr}} = \frac{\tau c}{2\cos\gamma} = \frac{1\mu s \cdot 299792458\frac{m}{s}}{2 \cdot \cos 45{^\circ}} \approx 212m\]
+\[\delta_{\text{gr}} = \frac{\tau c}{2\cos\gamma} = \frac{1\mu s \cdot 299792458\frac{m}{s}}{2 \cdot \cos 45{^\circ}} \approx 212m\]
 
 These values highlight the limitations of SLAR, which uses a small physical antenna. It produces images with resolution in the hundreds of meters, even from relatively low flying aircraft. Such images could not even distinguish city blocks let alone individual buildings from one another. Applying the same techniques would have had serious limitations when it came time to move from airborne to spaceborne systems. To achieve a high resolution image of about 0.3 meters using an X-band (\~3 cm wavelength) antenna in space, an ultra short pulse duration of about 2 nanoseconds and an antenna about 75 kilometers long would be required. Obviously, these are in no way feasible engineering parameters\!
 
