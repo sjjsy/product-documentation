@@ -29,7 +29,7 @@ Synthetic Aperture Radar (SAR) is an outstanding remote sensing technique due to
 The SAR101: Foundations material describes why and how all these remarkable capabilities are possible with SAR. It also addresses the fundamental limitations and challenges inherent to SAR imagery, because only by understanding both the advantages and disadvantages can SAR imagery be effectively utilized for demanding applications.
 
 <figure id="figure-1-paris">
-<img src="../img/media/image1.jpeg">
+<img src="https://github.com/sjjsy/product-documentation/releases/download/additional-assets-test/image1-paris.jpeg">
 <figcaption><strong>Figure 1: Paris.</strong> This SAR image over Paris, France features the Arc de Triomphe on the left, the Eiffel Tower on the center, and the Seine river flowing between them. Flat surfaces appear dark and smooth while the metallic Eiffel Tower and other buildings are pronounced. As with all SAR images, it is difficult to tell if this image was acquired day or night, under clear skies or a storm - this is due to the remarkable all-weather collection capabilities of SAR. </figcaption>
 </figure>
 
@@ -70,7 +70,7 @@ The chapters comprising **Part 2** focus on building understanding of SAR image 
   - **Chapter [<span class="underline">10</span>](10_data_products.md) Data Products** presents the most established data products on the market, from the early compensated phase history data products to newer colorized sub-aperture stack images and SAR Video.
 
 <figure id="figure-2-diversity">
-<img src="../img/media/image2.jpeg">
+<img src="https://github.com/sjjsy/product-documentation/releases/download/additional-assets-test/image2-diversity.jpeg">
 <figcaption><strong>Figure 2: Diversity.</strong> A SAR image featuring a mountainous scene with agricultural and residential infrastructure. High quality SAR imagery can enable numerous detection, analysis, monitoring and planning use cases that may be instrumental in operations and research and sometimes also save countless lives.</figcaption>
 </figure>
 
